@@ -23,11 +23,13 @@ init();
 
 function init() {
 	$requestType = empty( $_SERVER['REQUEST_METHOD'] ) ? 'GET' : $_SERVER['REQUEST_METHOD'];
-	$args = [];
+	$args = [
+		'format' => ! empty( $_GET['format'] ) && 'var_dump' === $_GET['format'] ? 'var_dump' : 'print_r',
+	];
 	$data = [];
 	switch ( $requestType ) {
 		case 'GET':
-			$args['wp_die_handler'] = 'stringify_output';
+			$args['wp_die_handler'] = ! empty( $_GET['return'] ) ? 'wp_send_json' : 'stringify_output';
 			$data[ $requestType ] = $_GET;
 			break;
 
@@ -48,7 +50,7 @@ function init() {
 
 		$put = file_put_contents( $requestsLog, "\n[" . date('Y-m-d H:i:s') . '] '. print_r( $data, true ), FILE_APPEND );
 
-		$data['result'] = $put;
+		$data['logged_result'] = $put;
 	}
 
 	wp_die( $data, $requestType, $args );

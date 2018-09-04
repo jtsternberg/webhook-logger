@@ -6,7 +6,15 @@ function stringify_output( $data, $title, $args ) {
 	} else {
 		$message = '';
 		foreach ( $data as $key => $value ) {
-			$message .= '<xmp>' . $key . ': ' . print_r( $value, true ) . '</xmp>';
+			if ( ! empty( $args['format'] ) && 'var_dump' === $args['format'] ) {
+				ob_start();
+				var_dump( $value );
+				// grab the data from the output buffer and add it to our $content variable
+				$value = '<strong><code>' . $key . ':</code></strong>' . ob_get_clean();
+			} else {
+				$value = '<xmp>' . $key . ': ' . print_r( $value, true ) . '</xmp>';
+			}
+			$message .= $value;
 		}
 	}
 
