@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cfab45d72dc0b55f17fbe5047515e24c",
+    "packages": [
+        {
+            "name": "jtsternberg/wp_die",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jtsternberg/wp_die.git",
+                "reference": "d496b3cefbf7b6a177c7c10f1da964bbf598b0de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jtsternberg/wp_die/zipball/d496b3cefbf7b6a177c7c10f1da964bbf598b0de",
+                "reference": "d496b3cefbf7b6a177c7c10f1da964bbf598b0de",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "wp_die.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Sternberg",
+                    "email": "justin@dsgnwrks.pro"
+                }
+            ],
+            "description": "Adds the `wp_die` function from WordPress, to provide a nicely formatted error page to your app, etc.",
+            "time": "2018-09-03T22:24:26+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
